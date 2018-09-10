@@ -17,8 +17,9 @@
     ],
     "require": {
         "php": "^7.1",
-        "ext-pcntl" : "*",
-        "facebook/webdriver" : "^1.6",
+        "ext-pcntl": "*",
+        "facebook/webdriver": "^1.6",
+        "spatie/async": "^0.0.4",
         "symfony/console": "^4.1"
     },
     "require-dev": {
@@ -27,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\SeleniumClient\\": "src"
+            "Spatie\\Selenium\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\SeleniumClient\\Tests\\": "tests"
+            "Spatie\\Selenium\\Tests\\": "tests"
         }
     },
     "scripts": {

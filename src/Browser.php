@@ -1,13 +1,13 @@
 <?php
 
-namespace Spatie\SeleniumClient;
+namespace Spatie\Selenium;
 
+use Facebook\WebDriver\Interactions\WebDriverActions;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\Remote\RemoteWebElement;
 use Facebook\WebDriver\WebDriver;
 use Facebook\WebDriver\WebDriverBy;
-use Facebook\WebDriver\WebDriverDimension;
 use Facebook\WebDriver\WebDriverPoint;
 use Facebook\WebDriver\WebDriverSelect;
 
@@ -27,7 +27,7 @@ class Browser
         );
 
         $this->driver->manage()->window()->setPosition(new WebDriverPoint(0 ,0));
-        $this->driver->manage()->window()->setSize(new WebDriverDimension(1080, 1920));
+        $this->driver->manage()->window()->maximize();
 
         $this->host = rtrim($host, '/');
 
@@ -64,6 +64,11 @@ class Browser
         return $this->driver->findElements(WebDriverBy::cssSelector($selector));
     }
 
+    public function linkByText(string $text): RemoteWebElement
+    {
+        return $this->driver->findElement(WebDriverBy::linkText($text));
+    }
+
     public function click(string $selector): RemoteWebElement
     {
         return $this->element($selector)->click();
@@ -79,9 +84,23 @@ class Browser
         (new WebDriverSelect($this->element($selector)))->selectByIndex($index);
     }
 
-    public function upload(string $select, string $path)
+    public function upload(string $selector, string $path)
     {
-        $this->element($select)->sendKeys($path);
+        $this->element($selector)->sendKeys($path);
+    }
+
+    public function scrollTo(string $selector)
+    {
+        $actions = new WebDriverActions($this->driver);
+
+        $actions->moveToElement($this->element($selector));
+
+        $actions->perform();
+    }
+
+    public function timeout(int $seconds): void
+    {
+        sleep($seconds);
     }
 
     public function driver(): WebDriver
@@ -91,7 +110,7 @@ class Browser
 
     public function wait()
     {
-        echo 'Waiting..' . PHP_EOL;
+        echo 'Press ctrl+c to exit..' . PHP_EOL;
 
         while (true) {};
     }
