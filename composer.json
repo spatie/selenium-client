@@ -1,0 +1,56 @@
+{
+    "name": "spatie/selenium-client",
+    "description": "A PHP client with Selenium",
+    "keywords": [
+        "spatie",
+        "selenium-client"
+    ],
+    "homepage": "https://github.com/spatie/selenium-client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brent Roose",
+            "email": "brent@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "ext-pcntl" : "*",
+        "facebook/webdriver" : "^1.6",
+        "symfony/console": "^4.1"
+    },
+    "require-dev": {
+        "larapack/dd": "^1.0",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\SeleniumClient\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\SeleniumClient\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\Skeleton\\SkeletonServiceProvider"
+            ],
+            "aliases": {
+                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
+            }
+        }
+    }
+}
