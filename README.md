@@ -6,7 +6,10 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/selenium-client.svg?style=flat-square)](https://packagist.org/packages/spatie/selenium-client)
 
 Selenium is a great tool for testing. 
-This package gives you a boilerplate setup to automate for example testing a legacy form.
+This package gives you a boilerplate setup to automate UI testing tasks you'd do manually otherwise.
+
+For example: you can make a scenario to test the flow of a form in one of your projects, 
+without having to worry about setting up Selenium itself.
 
 ## Installation
 
