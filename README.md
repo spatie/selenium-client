@@ -33,6 +33,44 @@ Next you can run your scenarios like so:
 php client.php execute dummy [--wait]
 ```
 
+Adding the `--wait` option will keep the browser open until you manually stop it.
+
+### Making scenarios
+
+Scenario classes should extend `Spatie\Selenium\Scenario`. 
+There are a few helper methods provided like `$this->element($selector)` and `$this->click($selector)`;
+but you can also directly access the Selenium driver via `$this->driver`.
+
+For more information about the Selenium driver, please visit [this repository](https://github.com/facebook/php-webdriver).
+
+A simple scenario can look like this.
+
+```php
+class MyScenario extends Scenario
+{
+    public function __construct()
+    {
+        // The website to visit.
+        
+        parent::__construct('https://mywebsite.com.test');
+    }
+
+    public function run()
+    {
+        // Go to a page
+        $this->get('/contact');
+
+        $this->element('input[name=name]')->sendKeys('Brent');
+        $this->element('input[name=email]')->sendKeys('brent@spatie.be');
+        $this->element('input[name=message']->sendKeys('Test');
+        
+        $this->submit('form#contact');
+    }
+}
+```
+
+Scenarios can be run with the `execute` command, in this case you'd run `execute my`. 
+
 ### Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
