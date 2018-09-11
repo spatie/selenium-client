@@ -9,7 +9,8 @@ Selenium is a great tool for testing.
 This package gives you a boilerplate setup to automate UI testing tasks you'd do manually otherwise.
 
 For example: you can make a scenario to test the flow of a form in one of your projects, 
-without having to worry about setting up Selenium itself.
+without having to worry about setting up Selenium itself. 
+This package uses Chrome by default, but you're able to override it with whatever driver you want.
 
 ## Installation
 
