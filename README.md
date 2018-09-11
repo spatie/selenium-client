@@ -5,27 +5,29 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/spatie/selenium-client.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/selenium-client)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/selenium-client.svg?style=flat-square)](https://packagist.org/packages/spatie/selenium-client)
 
-PHP client for Selenium
+Selenium is a great tool for testing. 
+This package gives you a boilerplate setup to automate for example testing a legacy form.
 
 ## Installation
 
-You can install the package via composer:
-
 ```bash
-composer require spatie/selenium-client
+git clone git@github.com:spatie/selenium-client.git
 ```
 
 ## Usage
 
-``` php
-$skeleton = new Spatie\Skeleton();
-echo $skeleton->echoPhrase('Hello, Spatie!');
+You can add your own scenarios in the `Scenarios` folder. 
+
+Next, you'll need to start the Selenium server like so:
+
+```bash
+php client.php serve
 ```
 
-### Testing
+Next you can run your scenarios like so:
 
-``` bash
-composer test
+```bash
+php client.php execute dummy [--wait]
 ```
 
 ### Changelog
