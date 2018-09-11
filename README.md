@@ -1,12 +1,6 @@
 # PHP Selenium client
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/selenium-client.svg?style=flat-square)](https://packagist.org/packages/spatie/selenium-client)
-[![Build Status](https://img.shields.io/travis/spatie/selenium-client/master.svg?style=flat-square)](https://travis-ci.org/spatie/selenium-client)
-[![Quality Score](https://img.shields.io/scrutinizer/g/spatie/selenium-client.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/selenium-client)
-[![Total Downloads](https://img.shields.io/packagist/dt/spatie/selenium-client.svg?style=flat-square)](https://packagist.org/packages/spatie/selenium-client)
-
-Selenium is a great tool for testing. 
-This package gives you a boilerplate setup to automate UI testing tasks you'd do manually otherwise.
+[Selenium](https://www.seleniumhq.org/) is a great tool for testing.  This package gives you a boilerplate setup to automate UI testing tasks you'd do manually otherwise.
 
 For example: you can make a scenario to test the flow of a form in one of your projects, 
 without having to worry about setting up Selenium itself. 
