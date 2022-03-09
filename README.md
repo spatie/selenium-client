@@ -1,3 +1,6 @@
+
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
+
 # PHP Selenium client
 
 [Selenium](https://www.seleniumhq.org/) is a great tool for testing.  This package gives you a boilerplate setup to automate UI testing tasks you'd do manually otherwise.
